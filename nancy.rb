@@ -81,12 +81,14 @@ end
 
 include Nancy::Delegator
 
-get "/bare-get" do
+get '/' do
   "Whoa, it works!"
 end
 
-post "/" do
+post '/' do
   request.body.read
 end
+
+
 
 Rack::Handler::WEBrick.run Nancy::Application, Port: 8080
